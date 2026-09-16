@@ -1,331 +1,411 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ron Maynard Sarmenta | Professional Portfolio</title>
-    <!-- Stable Tailwind CSS v3 CDN -->
-    <script src="https://tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        slate: { 950: '#030712', 900: '#0f172a', 800: '#1e293b', 700: '#334155' }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts & FontAwesome -->
-    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- FontAwesome Core Icons Setup -->
     <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Embedded Responsive Design Architecture Engine -->
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.3s, color 0.3s; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #030712; color: #f8fafc; line-height: 1.6; transition: background-color 0.3s, color 0.3s; padding-top: 80px; }
+        .max-width-container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Glassmorphism Navigation Blueprint */
+        nav { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background-color: rgba(3, 7, 18, 0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-b: 1px solid rgba(255, 255, 255, 0.08); z-index: 9999; transition: all 0.3s; }
+        .nav-wrapper { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+        .logo { font-size: 22px; font-weight: 800; letter-spacing: 1px; color: #ffffff; text-decoration: none; }
+        .logo span { color: #38bdf8; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #94a3b8; font-size: 14px; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #38bdf8; }
+        .btn-hire { background: linear-gradient(135deg, #0ea5e9 0%, #4f46e5 100%); color: #ffffff !important; padding: 10px 24px; border-radius: 12px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; border: none; cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.2); transition: all 0.3s; }
+        .btn-hire:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3); opacity: 0.95; }
+        
+        /* Dual-Theme Mode Matrix Variables */
+        body.light-theme-mode { background-color: #f8fafc; color: #0f172a; }
+        body.light-theme-mode nav { background-color: rgba(255, 255, 255, 0.85); border-b: 1px solid rgba(0, 0, 0, 0.08); }
+        body.light-theme-mode .logo { color: #0f172a; }
+        body.light-theme-mode .nav-links a { color: #475569; }
+        body.light-theme-mode .nav-links a:hover { color: #0ea5e9; }
+        body.light-theme-mode .hero-title { color: #0f172a; }
+        body.light-theme-mode .section-heading { color: #0f172a; }
+        body.light-theme-mode .card { background-color: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        body.light-theme-mode .card h3 { color: #0f172a; }
+        body.light-theme-mode .job-card h3 { color: #0f172a; }
+        body.light-theme-mode .widget-item { background-color: rgba(0, 0, 0, 0.04); border: 1px solid rgba(0, 0, 0, 0.08); color: #334155; }
+        body.light-theme-mode .tech-pill { background-color: #f1f5f9; color: #475569; }
+
+        .theme-toggle-btn { background: none; border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 10px; border-radius: 12px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
+        body.light-theme-mode .theme-toggle-btn { border-color: rgba(0,0,0,0.1); color: #475569; }
+        .theme-toggle-btn:hover { color: #38bdf8; border-color: #38bdf8; }
     </style>
 </head>
-<body class="text-slate-100 antialiased bg-slate-950 dark:bg-slate-950 light:bg-slate-50 light:text-slate-900 selection:bg-sky-500 selection:text-white">
+<body>
 
-    <!-- Fixed Glassmorphism Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/70 dark:bg-slate-950/70 light:bg-white/80 backdrop-blur-xl border-b border-slate-800/60 light:border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <span class="text-xl font-extrabold tracking-wider text-white light:text-slate-900">RMS<span class="text-sky-400">.tech</span></span>
-            
-            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-400 light:text-slate-600">
-                <a href="#about" class="hover:text-sky-400 transition-all duration-300">About</a>
-                <a href="#skills" class="hover:text-sky-400 transition-all duration-300">Skills</a>
-                <a href="#projects" class="hover:text-sky-400 transition-all duration-300">Projects</a>
-                <a href="#experience" class="hover:text-sky-400 transition-all duration-300">Experience</a>
-                <a href="#contact" class="hover:text-sky-400 transition-all duration-300">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-800 light:border-slate-200 text-slate-400 light:text-slate-600 hover:text-sky-400 transition-all duration-300">
-                    <i id="theme-icon" class="fa-solid fa-sun"></i>
+    <!-- Navigation Header -->
+    <nav>
+        <div class="max-width-container nav-wrapper">
+            <a href="#about" class="logo">RMS<span>.tech</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Visual Mode">
+                    <i id="theme-icon" class="fa-solid fa-sun" style="color: #fbbf24;"></i>
                 </button>
-                <a href="#contact" class="bg-gradient-to-r from-sky-500 to-indigo-600 text-white text-xs font-bold uppercase tracking-wider px-6 h-11 flex items-center rounded-xl shadow-lg shadow-sky-500/10 hover:shadow-sky-500/20 hover:scale-[1.02] transition-all duration-300">Hire Me</a>
+                <a href="#contact" class="btn-hire">Hire Me</a>
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <section id="about" class="pt-40 pb-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16 relative">
-        <div class="absolute w-96 h-96 bg-sky-500/10 rounded-full blur-3xl -top-10 -left-10 pointer-events-none"></div>
-        <div class="flex-1 space-y-8 text-center md:text-left z-10">
-            <!-- Realistic Live Time & Date Widgets Dashboard -->
-            <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold tracking-wide uppercase">
-                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span> Live Operations Active
-                </div>
-                <!-- Dynamic Local Live Indicators -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/60 light:bg-slate-200/60 border border-slate-800 light:border-slate-300 text-xs font-medium text-slate-300 light:text-slate-700">
-                    <i class="fa-solid fa-clock text-sky-400"></i> <span id="live-clock">00:00:00 AM</span>
-                </div>
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/60 light:bg-slate-200/60 border border-slate-800 light:border-slate-300 text-xs font-medium text-slate-300 light:text-slate-700">
-                    <i class="fa-solid fa-calendar-day text-indigo-400"></i> <span id="live-date">Loading Date...</span>
-                </div>
-            </div>
-
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white light:text-slate-900 leading-tight">
-                Hi, I'm <span class="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">Ron Maynard</span>
-            </h1>
-            <p class="text-lg sm:text-xl font-bold text-slate-400 light:text-slate-600 tracking-wide">
-                IT Operations Lead / Full-Stack Developer / Creative Video Editor
-            </p>
-            <p class="text-slate-400 light:text-slate-500 max-w-xl mx-auto md:mx-0 leading-relaxed text-sm sm:text-base font-light">
-                An adaptable IT Professional with 16+ years of verified enterprise expertise building cloud-integrated dashboards, deploying local architecture frameworks, and engineering high-impact automations.
-            </p>
-            
-            <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-                <a href="#projects" class="bg-gradient-to-r from-sky-500 to-indigo-600 text-white text-sm font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-indigo-500/20 hover:opacity-95 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2">
-                    View My Work <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-                <a href="#contact" class="bg-slate-900 light:bg-slate-200 hover:bg-slate-800 light:hover:bg-slate-300 border border-slate-800 light:border-slate-300 text-slate-300 light:text-slate-700 text-sm font-semibold px-8 py-3.5 rounded-xl transition-all duration-300 flex items-center gap-2">
-                    Get In Touch <i class="fa-solid fa-envelope text-xs"></i>
-                </a>
-            </div>
-        </div>
+    <style>
+        /* Hero UI Grid Architecture */
+        .hero-section { padding: 80px 0; position: relative; overflow: hidden; }
+        .hero-grid { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 64px; }
+        @media (min-width: 768px) { .hero-grid { flex-direction: row; } }
+        .hero-content { flex: 1; text-align: center; }
+        @media (min-width: 768px) { .hero-content { text-align: left; } }
         
-        <!-- Cyberpunk Image Card Framework -->
-        <div class="relative z-10 group">
-            <div class="absolute -inset-1.5 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-            <div class="w-60 h-60 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border-2 border-slate-800/80 light:border-slate-300 bg-slate-900 shadow-2xl relative">
-                <img src="ronsarmenta.jpg" alt="Ron Maynard R. Sarmenta" class="w-full h-full object-cover object-top filter contrast-[1.02] transition duration-500 group-hover:scale-105">
+        /* System Indicators Dashboard Blueprint */
+        .widgets-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 28px; }
+        @media (min-width: 768px) { .widgets-container { justify-content: flex-start; } }
+        .widget-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 9999px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; background-color: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.2); color: #38bdf8; }
+        .widget-badge span { width: 8px; height: 8px; border-radius: 50%; background-color: #34d399; display: inline-block; animation: pingEffect 1.5s infinite; }
+        .widget-item { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500; background-color: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255,255,255,0.05); color: #cbd5e1; }
+        
+        .hero-title { font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+        @media (min-width: 992px) { .hero-title { font-size: 56px; } }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 18px; font-weight: 700; color: #94a3b8; margin-bottom: 24px; }
+        .hero-description { color: #94a3b8; font-size: 15px; font-weight: 300; max-width: 540px; margin: 0 auto 32px auto; }
+        @media (min-width: 768px) { .hero-description { margin: 0 0 32px 0; } }
+        
+        .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+        @media (min-width: 768px) { .hero-buttons { justify-content: flex-start; } }
+        .btn-primary { background: linear-gradient(135deg, #0ea5e9 0%, #4f46e5 100%); color: #ffffff; padding: 14px 32px; border-radius: 12px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+        .btn-secondary { background-color: #1e293b; color: #e2e8f0; padding: 14px 32px; border-radius: 12px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1px solid #334155; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        body.light-theme-mode .btn-secondary { background-color: #f1f5f9; color: #334155; border-color: #cbd5e1; }
+        .btn-secondary:hover { background-color: #334155; }
+        body.light-theme-mode .btn-secondary:hover { background-color: #e2e8f0; }
+        
+        /* Cyberpunk Photo Frame Styling */
+        .image-showcase { position: relative; display: flex; justify-content: center; z-index: 10; }
+        .outer-glow-layer { position: absolute; inset: -8px; background: linear-gradient(135deg, #0ea5e9 0%, #4f46e5 100%); border-radius: 24px; filter: blur(12px); opacity: 0.25; transition: opacity 0.5s; }
+        .image-showcase:hover .outer-glow-layer { opacity: 0.45; }
+        .photo-frame { width: 260px; height: 260px; border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); background-color: #0f172a; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        body.light-theme-mode .photo-frame { border-color: rgba(0,0,0,0.08); }
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s; }
+        .photo-frame:hover img { transform: scale(1.04); }
+        
+        @keyframes pingEffect { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
+    </style>
+
+    <!-- Hero Section Frame -->
+    <section id="about" class="hero-section">
+        <div class="max-width-container hero-grid">
+            <div class="hero-content">
+                <div class="widgets-container">
+                    <div class="widget-badge"><span></span>Active Deployment</div>
+                    <div class="widget-item"><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> <span id="live-clock">00:00:00 AM</span></div>
+                    <div class="widget-item"><i class="fa-solid fa-calendar-day" style="color: #818cf8;"></i> <span id="live-date">September 16, 2026</span></div>
+                </div>
+                <h1 class="hero-title">Hi, I'm <span class="gradient-text">Ron Maynard</span></h1>
+                <p class="hero-subtitle">IT Operations Lead / Full-Stack Developer / Creative Video Editor</p>
+                <p class="hero-description">An adaptable IT Professional with 16+ years of verified enterprise expertise building custom cloud-linked web applications, configuring secure remote networks, and rendering high-impact multimedia layouts.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View My Work <i class="fa-solid fa-arrow-right" style="font-size: 11px;"></i></a>
+                    <a href="#contact" class="btn-secondary">Get In Touch <i class="fa-solid fa-envelope" style="font-size: 11px;"></i></a>
+                </div>
+            </div>
+            <div class="image-showcase">
+                <div class="outer-glow-layer"></div>
+                <div class="photo-frame">
+                    <img src="ronsarmenta.jpg" alt="Ron Maynard R. Sarmenta">
+                </div>
             </div>
         </div>
     </section>
+    <style>
+        /* Section Uniform Layout Styles */
+        .section-padding { padding: 90px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        body.light-theme-mode .section-padding { border-top: 1px solid rgba(0,0,0,0.06); }
+        .section-header { text-align: center; max-width: 600px; margin: 0 auto 60px auto; }
+        .section-heading { font-size: 32px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+        .section-divider { width: 48px; height: 4px; background-color: #0ea5e9; margin: 0 auto 16px auto; border-radius: 2px; }
+        .section-subtext { color: #64748b; font-size: 15px; font-weight: 400; }
+        
+        /* Core Columns Alignment Panels */
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+        .card { background-color: #0f172a; border: 1px solid #1e293b; padding: 32px; border-radius: 20px; transition: all 0.3s; }
+        .card:hover { border-color: rgba(14, 165, 233, 0.3); transform: translateY(-2px); }
+        .icon-box { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 24px; }
+        .card h3 { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 16px; }
+        .card-list { list-style: none; }
+        .card-list li { font-size: 13px; color: #94a3b8; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 400; }
+        body.light-theme-mode .card-list li { color: #475569; }
+    </style>
 
-    <!-- Skills Matrix Section -->
-    <section id="skills" class="py-24 bg-slate-900/30 border-y border-slate-900/60 light:border-slate-200 px-6">
-        <div class="max-w-6xl mx-auto space-y-16">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl font-extrabold tracking-tight text-white light:text-slate-900 sm:text-4xl">Expertise & Core Competencies</h2>
-                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
-                <p class="text-slate-400 light:text-slate-500 text-sm sm:text-base font-light">A diverse tech stack bridging the gap between robust system engineering, precise business data matrixing, and corporate creative workflows.</p>
+    <!-- Skills Matrix Layout Block -->
+    <section id="skills" class="section-padding" style="background-color: rgba(15, 23, 42, 0.2);">
+        <div class="max-width-container">
+            <div class="section-header">
+                <h2 class="section-heading">Expertise & Core Competencies</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtext">Isang balanseng tech stack na pinagsasama ang advanced system development, secure data operations, at corporate creative workflows.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900/60 light:bg-white border border-slate-800/80 light:border-slate-200 p-8 rounded-2xl space-y-5 hover:border-sky-500/40 hover:shadow-xl hover:shadow-sky-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fa-solid fa-code text-xl"></i></div>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900">Full-Stack Engineering</h3>
-                    <ul class="text-slate-400 light:text-slate-600 text-sm space-y-3 font-light">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-sky-400 text-xs"></i> HTML5 / CSS3 (Flexbox & Grid)</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-sky-400 text-xs"></i> JavaScript (ES6+ Functional Logic)</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-sky-400 text-xs"></i> Firebase Firestore & Auth Systems</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-sky-400 text-xs"></i> Google Apps Script (GAS) Automation</li>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon-box" style="background-color: rgba(14, 165, 233, 0.1); color: #38bdf8;"><i class="fa-solid fa-code"></i></div>
+                    <h3>Full-Stack Engineering</h3>
+                    <ul class="card-list">
+                        <li><i class="fa-solid fa-check" style="color: #38bdf8;"></i> HTML5 / CSS3 (Flexbox & Grid Layouts)</li>
+                        <li><i class="fa-solid fa-check" style="color: #38bdf8;"></i> JavaScript (ES6+ Modern Application Logic)</li>
+                        <li><i class="fa-solid fa-check" style="color: #38bdf8;"></i> Firebase Firestore Cloud Datastores & Auth</li>
+                        <li><i class="fa-solid fa-check" style="color: #38bdf8;"></i> Google Apps Script (GAS) Enterprise Logic</li>
                     </ul>
                 </div>
-                <div class="bg-slate-900/60 light:bg-white border border-slate-800/80 light:border-slate-200 p-8 rounded-2xl space-y-5 hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400"><i class="fa-solid fa-screwdriver-wrench text-xl"></i></div>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900">Infrastructure & Support</h3>
-                    <ul class="text-slate-400 light:text-slate-600 text-sm space-y-3 font-light">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Secure Remote Systems Admin</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Multi-Platform Diagnostic Remoting</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> Network Routing & Printer Arrays</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-indigo-400 text-xs"></i> OS Optimization & Disaster Recovery</li>
+                <div class="card">
+                    <div class="icon-box" style="background-color: rgba(99, 102, 241, 0.1); color: #818cf8;"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3>Infrastructure & Support</h3>
+                    <ul class="card-list">
+                        <li><i class="fa-solid fa-check" style="color: #818cf8;"></i> Secure Desktop Remote Systems Admin</li>
+                        <li><i class="fa-solid fa-check" style="color: #818cf8;"></i> Multi-Platform Diagnostic Remoting Protocols</li>
+                        <li><i class="fa-solid fa-check" style="color: #818cf8;"></i> Local Network Routing & Network Printer Arrays</li>
+                        <li><i class="fa-solid fa-check" style="color: #818cf8;"></i> PC OS Configuration Architecture & System Recovery</li>
                     </ul>
                 </div>
-                <div class="bg-slate-900/60 light:bg-white border border-slate-800/80 light:border-slate-200 p-8 rounded-2xl space-y-5 hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400"><i class="fa-solid fa-video text-xl"></i></div>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900">Data Analytics & Media</h3>
-                    <ul class="text-slate-400 light:text-slate-600 text-sm space-y-3 font-light">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Advanced Excel V-Lookup Matrices</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Cross-Island Inventory Consolidation</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Photoshop CS6 Graphic Layout Assets</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-purple-400 text-xs"></i> Corporate Video Rendering & Editing</li>
+                <div class="card">
+                    <div class="icon-box" style="background-color: rgba(168, 85, 247, 0.1); color: #c084fc;"><i class="fa-solid fa-video"></i></div>
+                    <h3>Data Analytics & Media</h3>
+                    <ul class="card-list">
+                        <li><i class="fa-solid fa-check" style="color: #c084fc;"></i> Advanced Excel V-Lookup Formulas & Reports</li>
+                        <li><i class="fa-solid fa-check" style="color: #c084fc;"></i> Cross-Island Corporate Inventory Consolidation</li>
+                        <li><i class="fa-solid fa-check" style="color: #c084fc;"></i> Photoshop CS6 Graphic Layout Asset Production</li>
+                        <li><i class="fa-solid fa-check" style="color: #c084fc;"></i> Corporate Video Production Rendering & Editing</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto space-y-16">
-        <div class="text-center max-w-2xl mx-auto space-y-3">
-            <h2 class="text-3xl font-extrabold tracking-tight text-white light:text-slate-900 sm:text-4xl">Featured Production Cases</h2>
-            <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
-            <p class="text-slate-400 light:text-slate-500 text-sm sm:text-base font-light">Real-world enterprise tools engineered to maximize workflow speed, data visibility, and community automation blueprints.</p>
-        </div>
+    <style>
+        /* Grid Layout Framework for Projects Section Cards */
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+        .project-card { display: flex; flex-direction: column; justify-content: space-between; height: 100%; border-radius: 20px; padding: 32px; background-color: rgba(15, 23, 42, 0.4); border: 1px solid #1e293b; transition: all 0.3s; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px 0; }
+        .tech-pill { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 8px; background-color: #1e293b; color: #94a3b8; }
+        .project-footer { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #475569; }
+        body.light-theme-mode .project-footer { border-top-color: rgba(0,0,0,0.06); }
+        .project-link { font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    </style>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <div class="bg-slate-900/40 light:bg-white border border-slate-800/80 light:border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between p-7 hover:border-sky-500/30 hover:shadow-xl hover:shadow-sky-500/5 transition-all duration-300">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-sky-400 uppercase tracking-widest bg-sky-500/10 px-3 py-1 rounded-md">Full-Stack Dev</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 pt-2">IMRS Check-In & Out Dashboard</h3>
-                    <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed font-light">A dynamic, high-performance tracking system configured with lightning-fast cloud response models to eliminate latency vectors across distributed workspaces.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">HTML5/CSS3</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">JavaScript ES6</span>
+    <!-- Projects Section Block -->
+    <section id="projects" class="section-padding">
+        <div class="max-width-container">
+            <div class="section-header">
+                <h2 class="section-heading">Featured Production Cases</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtext">Mga aktwal na software systems at automation tools na binuo upang mapabilis ang workflow ng mga kumpanya at komunidad.</p>
+            </div>
+            <div class="grid-2">
+                <!-- Project 1 block -->
+                <div class="project-card" style="border-left: 4px solid #0ea5e9;">
+                    <div class="project-body">
+                        <span style="font-size: 11px; font-weight: 700; color: #0ea5e9; text-transform: uppercase; letter-spacing: 0.5px;">Full-Stack Application</span>
+                        <h3 style="font-size: 19px; font-weight: 700; color: #ffffff; margin: 8px 0 12px 0;">IMRS Check-In & Out Dashboard</h3>
+                        <p style="font-size: 13.5px; color: #94a3b8; font-weight: 300;">Isang high-performance corporate operational ecosystem na binuo gamit ang real-time dynamic sync para alisin ang latency log lag sa pagsubaybay ng attendance ng mga empleyado.</p>
+                        <div class="tag-row">
+                            <span class="tech-pill">HTML5/CSS3</span><span class="tech-pill">JavaScript ES6</span><span class="tech-pill">Firebase Firestore</span>
+                        </div>
+                    </div>
+                    <div class="project-footer"><span>Deployed Architecture</span><span style="color: #94a3b8;">Live Engine <i class="fa-solid fa-network-wired"></i></span></div>
+                </div>
+                
+                <!-- Project 2 block -->
+                <div class="project-card" style="border-left: 4px solid #10b981; background-color: rgba(16, 185, 129, 0.02);">
+                    <div class="project-body">
+                        <span style="font-size: 11px; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 0.5px;">Enterprise Central Hub Gateway</span>
+                        <h3 style="font-size: 19px; font-weight: 700; color: #ffffff; margin: 8px 0 12px 0;">iMerch Suite Portal</h3>
+                        <p style="font-size: 13.5px; color: #94a3b8; font-weight: 300;">Isang centralized master ecosystem gateway network hub na nagpapatakbo at nagpapadali ng access sa mga pinagsamang corporate modules, incident reports, at appraisal matrices.</p>
+                        <div class="tag-row">
+                            <span class="tech-pill">System Architecture</span><span class="tech-pill">UI Integration</span><span class="tech-pill">Gateway Hub</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.io" target="_blank" class="project-link" style="color: #10b981;">Launch Portal <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 9px;"></i></a>
+                        <span style="color: #94a3b8;">Main Server <i class="fa-solid fa-server"></i></span>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 light:border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
-                    <span>Deployed Architecture</span>
-                    <span class="text-slate-400 light:text-slate-500">Live Engine <i class="fa-solid fa-network-wired ml-1"></i></span>
-                </div>
-            </div>
 
-            <!-- Project 2 -->
-            <div class="bg-slate-900/40 light:bg-white border border-slate-800/80 light:border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between p-7 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-md">Enterprise Hub</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 pt-2">iMerch Suite Portal</h3>
-                    <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed font-light">Isang centralized multi-system cloud directory at dashboard router na nagpapatakbo ng mabilisang pamamahala sa corporate pipelines at operational metrics evaluation sheets.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">Gateway Architecture</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">UI Integration</span>
+                <!-- Project 3 block -->
+                <div class="project-card" style="border-left: 4px solid #f59e0b; background-color: rgba(245, 158, 11, 0.02);">
+                    <div class="project-body">
+                        <span style="font-size: 11px; font-weight: 700; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.5px;">Community Support System</span>
+                        <h3 style="font-size: 19px; font-weight: 700; color: #ffffff; margin: 8px 0 12px 0;">P3CC Disaster Response Suite Hub</h3>
+                        <p style="font-size: 13.5px; color: #94a3b8; font-weight: 300;">Isang specialized emergency automation database framework na may integrated live tracking layouts para sa rapid dispatch management at community coordination directives.</p>
+                        <div class="tag-row">
+                            <span class="tech-pill">Crisis Tech Layout</span><span class="tech-pill">Real-Time Sync</span><span class="tech-pill">GitHub Pages</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.io" target="_blank" class="project-link" style="color: #f59e0b;">Open Suite Hub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 9px;"></i></a>
+                        <span style="color: #94a3b8;">Disaster Portal <i class="fa-solid fa-shield-halved"></i></span>
                     </div>
                 </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 light:border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
-                    <a href="https://github.io" target="_blank" class="text-emerald-400 hover:text-emerald-500 font-semibold flex items-center gap-1.5 transition">Launch Site <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
-                    <span class="text-slate-400 light:text-slate-500">Main Router <i class="fa-solid fa-server ml-1"></i></span>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="bg-slate-900/40 light:bg-white border border-slate-800/80 light:border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between p-7 hover:border-amber-500/30 hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/10 px-3 py-1 rounded-md">Crisis Response</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 pt-2">P3CC Disaster Response Suite Hub</h3>
-                    <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed font-light">Isang matatag na disaster support system hub na binuo gamit ang real-time para mag-coordinate ng rapid community emergency dispatch updates.</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">Crisis Tech Layout</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">Real-Time Sync</span>
+                
+                <!-- Project 4 block -->
+                <div class="project-card" style="border-left: 4px solid #6366f1;">
+                    <div class="project-body">
+                        <span style="font-size: 11px; font-weight: 700; color: #6366f1; text-transform: uppercase; letter-spacing: 0.5px;">Data Infrastructure & Analytics</span>
+                        <h3 style="font-size: 19px; font-weight: 700; color: #ffffff; margin: 8px 0 12px 0;">National Cross-Regional Reporting Matrix</h3>
+                        <p style="font-size: 13.5px; color: #94a3b8; font-weight: 300;">Isang automated data system tracker na nag-iisa ng ulat ng stock flows mula sa magkakahiwalay na pambansang bodega (Luzon, Visayas, Mindanao) gamit ang advanced V-Lookup pipelines.</p>
+                        <div class="tag-row">
+                            <span class="tech-pill">Advanced MS Excel</span><span class="tech-pill">V-Lookup Logic</span><span class="tech-pill">Data Consolidation</span>
+                        </div>
                     </div>
-                </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 light:border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
-                    <a href="https://github.io" target="_blank" class="text-amber-400 hover:text-amber-500 font-semibold flex items-center gap-1.5 transition">Open Hub <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
-                    <span class="text-slate-400 light:text-slate-500">Disaster Portal <i class="fa-solid fa-shield-halved ml-1"></i></span>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="bg-slate-900/40 light:bg-white border border-slate-800/80 light:border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between p-7 hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-md">Data Analytics</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 pt-2">National Cross-Regional Reporting Matrix</h3>
-                    <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed font-light">Automated corporate tracking engine designed to unify sales flows and distribution metrics from nationwide pipelines (Luzon, Visayas, Mindanao).</p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">Advanced MS Excel</span>
-                        <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-slate-300 light:text-slate-700 text-xs font-medium">V-Lookup Automation</span>
-                    </div>
-                </div>
-                <div class="mt-8 pt-4 border-t border-slate-800/80 light:border-slate-200 flex items-center justify-between text-xs text-slate-500 font-medium">
-                    <span>Multi-brand Deployment Data</span>
-                    <span class="text-slate-400 light:text-slate-500">Logistics System <i class="fa-solid fa-boxes-stacked ml-1"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Career Journey Section -->
-    <section id="experience" class="py-24 bg-slate-900/30 border-y border-slate-900/60 light:border-slate-200 px-6">
-        <div class="max-w-3xl mx-auto space-y-16">
-            <div class="text-center space-y-3">
-                <h2 class="text-3xl font-extrabold tracking-tight text-white light:text-slate-900 sm:text-4xl">Professional Journey</h2>
-                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
-            </div>
-
-            <!-- Vertical Tech Timeline Diagram -->
-            <div class="relative border-l-2 border-slate-800 light:border-slate-300 pl-6 space-y-12 ml-4">
-                <div class="relative group">
-                    <div class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-sky-500 ring-4 ring-slate-950 light:ring-slate-50 group-hover:bg-emerald-400 transition-all duration-300"></div>
-                    <span class="text-xs font-bold text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-full">Feb 2020 – Present</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 mt-4">IT & Communications Coordinator <span class="text-slate-400 font-normal text-sm block md:inline md:ml-1">(Multimedia & Infrastructure Lead)</span></h3>
-                    <h4 class="text-sm font-semibold text-slate-400 light:text-slate-500 mt-1">IMERCH MEDIA INC. (HRD Department)</h4>
-                    <p class="text-slate-400 light:text-slate-600 text-sm mt-3 leading-relaxed font-light">Entrusted by the Human Resource Development team to run the company's hardware ecosystems, structure internal diagnostics routing, and author high-end corporate visualization assets.</p>
-                </div>
-                <div class="relative group">
-                    <div class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-slate-700 ring-4 ring-slate-950 light:ring-slate-50 group-hover:bg-sky-400 transition-all duration-300"></div>
-                    <span class="text-xs font-semibold text-slate-400 bg-slate-800 border border-slate-700 px-3 py-1 rounded-full">May 2015 – Feb 2020</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 mt-4">Team Leader / Senior System Analyst / Data Analyst</h3>
-                    <h4 class="text-sm font-semibold text-slate-400 light:text-slate-500 mt-1">IMERCH MEDIA INC.</h4>
-                    <p class="text-slate-400 light:text-slate-600 text-sm mt-3 leading-relaxed font-light">Led strategic tracking frameworks. Orchestrated complex system metrics logs for prominent clients including Pernod Ricard, CVS, Delfi Inc., and SLAGRI TECH.</p>
-                </div>
-                <div class="relative group">
-                    <div class="absolute -left-[31px] top-1 h-4 w-4 rounded-full bg-slate-700 ring-4 ring-slate-950 light:ring-slate-50 group-hover:bg-sky-400 transition-all duration-300"></div>
-                    <span class="text-xs font-semibold text-slate-400 bg-slate-800 border border-slate-700 px-3 py-1 rounded-full">April 2010 – May 2015</span>
-                    <h3 class="text-xl font-bold text-white light:text-slate-900 mt-4">Data Entry & System Operations Specialist</h3>
-                    <h4 class="text-sm font-semibold text-slate-400 mt-1">IMERCH MEDIA INC.</h4>
-                    <p class="text-slate-400 light:text-slate-600 text-sm mt-3 leading-relaxed font-light">Managed massive configuration updates and refined structural pipeline conversions while safeguarding uninterrupted software server uptimes.</p>
+                    <div class="project-footer"><span>Multi-brand Outlets Reporting</span><span style="color: #94a3b8;">Logistics Unit <i class="fa-solid fa-boxes-stacked"></i></span></div>
                 </div>
             </div>
         </div>
     </section>
+    <style>
+        /* Timeline and Contact Sub-elements Core Styling */
+        .timeline { border-left: 2px solid #1e293b; padding-left: 24px; position: relative; max-width: 700px; margin: 0 auto; }
+        body.light-theme-mode .timeline { border-left-color: #e2e8f0; }
+        .timeline-item { position: relative; margin-bottom: 48px; }
+        .timeline-item::before { content: ''; position: absolute; left: -33px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background-color: #1e293b; border: 4px solid #030712; transition: background-color 0.3s; }
+        body.light-theme-mode .timeline-item::before { border-color: #f8fafc; background-color: #cbd5e1; }
+        .timeline-item.active::before { background-color: #0ea5e9; }
+        .job-date { display: inline-block; font-size: 11px; font-weight: 700; color: #0ea5e9; padding: 4px 12px; border-radius: 9999px; background-color: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.15); margin-bottom: 12px; }
+        .job-card h3 { font-size: 18px; font-weight: 700; color: #ffffff; }
+        .job-card h4 { font-size: 13px; font-weight: 600; color: #64748b; margin: 4px 0 12px 0; }
+        .job-card p { font-size: 14px; color: #94a3b8; font-weight: 300; }
+        body.light-theme-mode .job-card p { color: #475569; }
+        
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 900px; margin: 0 auto; }
+        @media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+        .info-list { list-style: none; margin-top: 20px; }
+        .info-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; font-size: 14px; color: #cbd5e1; }
+        body.light-theme-mode .info-row { color: #334155; }
+        .info-icon { width: 36px; height: 36px; border-radius: 10px; background-color: rgba(14, 165, 233, 0.1); color: #0ea5e9; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+        .framework-row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        body.light-theme-mode .framework-row { border-bottom-color: rgba(0,0,0,0.06); }
+        .framework-row span:first-child { color: #64748b; }
+        .framework-row span:last-child { font-weight: 600; color: #e2e8f0; }
+        body.light-theme-mode .framework-row span:last-child { color: #334155; }
+    </style>
 
-    <!-- Connect Grid Section -->
-    <section id="contact" class="py-24 px-6 max-w-5xl mx-auto space-y-16">
-        <div class="text-center space-y-3">
-            <h2 class="text-3xl font-extrabold tracking-tight text-white light:text-slate-900 sm:text-4xl">Let's Connect</h2>
-            <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <div class="bg-slate-900/40 light:bg-white border border-slate-800/80 light:border-slate-200 p-8 rounded-2xl space-y-6">
-                <h3 class="text-lg font-bold text-white light:text-slate-900">Direct Channels</h3>
-                <p class="text-slate-400 light:text-slate-600 text-sm font-light">Feel free to reach out anytime via email or phone call. I respond swiftly to operational inquiries.</p>
-                <div class="space-y-4 text-sm font-light">
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fa-solid fa-envelope"></i></div>
-                        <span class="text-slate-300 light:text-slate-700">ron.sarmenta@gmail.com</span>
+    <!-- Experience Timeline Block -->
+    <section id="experience" class="section-padding" style="background-color: rgba(15, 23, 42, 0.2);">
+        <div class="max-width-container">
+            <div class="section-header">
+                <h2 class="section-heading">Professional Journey</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtext">Isang timeline na nagpapakita ng higit sa 16 na taon ng tuluy-tuloy na pamumuno at tech management sa industriya.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <span class="job-date">Feb 2020 – Present</span>
+                    <div class="job-card">
+                        <h3>IT & Communications Coordinator <span style="font-size: 13px; color: #64748b; font-weight: 400;">(Multimedia & Infrastructure Lead)</span></h3>
+                        <h4>IMERCH MEDIA INC. (HRD Department)</h4>
+                        <p>Pinagkatiwalaan ng kumpanya na pamahalaan ang core network hardware frameworks, mag-deploy ng diagnostic remote troubleshooting setups, at gumawa ng mga premium marketing visualization layouts.</p>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400"><i class="fa-solid fa-phone"></i></div>
-                        <span class="text-slate-300 light:text-slate-700">09925434425</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="job-date" style="color: #94a3b8; background-color: rgba(148,163,184,0.1); border-color: rgba(148,163,184,0.15);">May 2015 – Feb 2020</span>
+                    <div class="job-card">
+                        <h3>Team Leader / Senior System Analyst / Data Analyst</h3>
+                        <h4>IMERCH MEDIA INC.</h4>
+                        <p>Namuno sa pambansang deployment tracking systems at nag-manage ng data operations audit para sa mga prestihiyosong kliyente tulad ng Pernod Ricard, CVS, Delfi Inc., at SLAGRI TECH.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="job-date" style="color: #94a3b8; background-color: rgba(148,163,184,0.1); border-color: rgba(148,163,184,0.15);">April 2010 – May 2015</span>
+                    <div class="job-card">
+                        <h3>Data Entry & System Operations Specialist</h3>
+                        <h4>IMERCH MEDIA INC.</h4>
+                        <p>Nangasiwa sa mataas na bilis ng system configurations at nagproseso ng mga kumplikadong macro data report conversions habang pinapanatili ang integrity ng servers.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-slate-900/40 light:bg-white border border-slate-800/80 light:border-slate-200 p-8 rounded-2xl space-y-5">
-                <h3 class="text-lg font-bold text-white light:text-slate-900">Operational Framework</h3>
-                <div class="space-y-3.5 text-sm border-t border-slate-800/80 light:border-slate-200 pt-4 font-light">
-                    <div class="flex justify-between"><span class="text-slate-500">Academic Degree:</span> <span class="text-slate-300 light:text-slate-700 font-semibold">BS IT (Programming)</span></div>
-                    <div class="flex justify-between"><span class="text-slate-500">Total Experience:</span> <span class="text-slate-300 light:text-slate-700 font-semibold">16+ Years Continuous</span></div>
-                    <div class="flex justify-between"><span class="text-slate-500">Work Availability:</span> <span class="text-sky-400 font-bold uppercase tracking-wider">Immediate Deployment</span></div>
-                </div>
-            </div>
         </div>
-
-        <footer class="text-center text-xs text-slate-600 pt-16 border-t border-slate-900/60 light:border-slate-200">
-            <p>© 2026 Ron Maynard R. Sarmenta. Handcrafted for GitHub Pages.</p>
-        </footer>
     </section>
 
-    <!-- Operational Core JavaScript Engines -->
+    <!-- Connect Grid Block Section -->
+    <section id="contact" class="section-padding">
+        <div class="max-width-container">
+            <div class="section-header">
+                <h2 class="section-heading">Let's Connect</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtext">Handang mag-deploy ng modernong operational scripts, remote desktop networks, o kumpletong corporate data structures.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="card">
+                    <h3 style="font-size: 17px; margin-bottom: 12px;">Direct Channels</h3>
+                    <p style="font-size: 13px; color: #64748b; font-weight: 400; margin-bottom: 20px;">Maaari mo akong kontakin anumang oras sa pamamagitan ng aking email o telepono para sa mga teknikal na operasyon.</p>
+                    <ul class="info-list">
+                        <li class="info-row"><div class="info-icon"><i class="fa-solid fa-envelope"></i></div>ron.sarmenta@gmail.com</li>
+                        <li class="info-row"><div class="info-icon"><i class="fa-solid fa-phone"></i></div>09925434425</li>
+                        <li class="info-row"><div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>Nueva Ecija, Philippines</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 17px; margin-bottom: 20px;">Operational Framework</h3>
+                    <div class="framework-row"><span>Academic Degree:</span><span>BS IT (Programming)</span></div>
+                    <div class="framework-row"><span>Total Experience:</span><span>16+ Years Continuous</span></div>
+                    <div class="framework-row"><span>Core Specialty:</span><span>Operations & Tech Hybrid</span></div>
+                    <div class="framework-row"><span>Availability:</span><span style="color: #38bdf8 !important;">Immediate Deployment</span></div>
+                </div>
+            </div>
+            <footer style="text-align: center; margin-top: 80px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 12px; color: #475569;">
+                <p>© 2026 Ron Maynard R. Sarmenta. All rights reserved.</p>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Operational Core JavaScript Scripts -->
     <script>
-        // 1. Dual-Theme Light/Dark Toggle Controller Engine
+        // 1. Core Visual Dual-Theme Controller Setup 
         const toggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         
         toggleBtn.addEventListener('click', () => {
             if (document.body.classList.contains('light-theme-mode')) {
                 document.body.classList.remove('light-theme-mode');
-                // Target core element selectors manually to switch Tailwind variants safely
-                document.querySelectorAll('html, nav, section, h1, h2, h3, div, p, span, a, button, li').forEach(el => el.classList.remove('light'));
-                themeIcon.className = 'fa-solid fa-sun text-amber-400';
+                themeIcon.className = 'fa-solid fa-sun';
+                themeIcon.style.color = '#fbbf24';
             } else {
                 document.body.classList.add('light-theme-mode');
-                document.querySelectorAll('html, nav, section, h1, h2, h3, div, p, span, a, button, li').forEach(el => el.class = el.classList.add('light'));
-                themeIcon.className = 'fa-solid fa-moon text-indigo-500';
+                themeIcon.className = 'fa-solid fa-moon';
+                themeIcon.style.color = '#6366f1';
             }
         });
 
-        // 2. Realistic 12-Hour Sync Clock & Philippine Format Date Engine
-        function runCentralizedSystemClock() {
+        // 2. Realistic 12-Hour Sync System Clock & Philippine Format Date Logs
+        function startSystemClockCore() {
             const clockEl = document.getElementById('live-clock');
             const dateEl = document.getElementById('live-date');
             
-            const options = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeOptions = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             const dateOptions = { timeZone: 'Asia/Manila', weekday: 'short', year: 'numeric', month: 'short', day: '2-digit' };
             
             setInterval(() => {
-                const now = new Date();
-                clockEl.textContent = now.toLocaleTimeString('en-US', options);
-                dateEl.textContent = now.toLocaleDateString('en-US', dateOptions);
+                const liveNow = new Date();
+                clockEl.textContent = liveNow.toLocaleTimeString('en-US', timeOptions);
+                dateEl.textContent = liveNow.toLocaleDateString('en-US', dateOptions);
             }, 1000);
         }
         
-        // Execute clock threads on operational load
-        window.addEventListener('DOMContentLoaded', runCentralizedSystemClock);
+        window.addEventListener('DOMContentLoaded', startSystemClockCore);
     </script>
 </body>
 </html>

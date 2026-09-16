@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ron Maynard Sarmenta | Portfolio</title>
+    <title>Ron Maynard Sarmenta | Professional Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome for Icons -->
@@ -64,9 +65,9 @@
             </div>
         </div>
         <div class="w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900 flex items-center justify-center relative group">
-            <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <!-- Avatar Fallback Icon or Image -->
-            <i class="fa-solid fa-user-tie text-7xl text-slate-600 group-hover:text-sky-400 transition duration-500"></i>
+            <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition duration-500 z-10"></div>
+            <!-- Dynamic User Headshot Reference -->
+            <img src="Ron Sarmenta.jpg" alt="Ron Maynard R. Sarmenta" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105">
         </div>
     </section>
 
@@ -114,10 +115,10 @@
                     </div>
                     <h3 class="text-lg font-bold text-white">Data Analytics & Media</h3>
                     <ul class="text-slate-400 text-sm space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Cross-Regional Data Inventory</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Advanced Excel Formula Logic</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Video Layout Composition</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> CS6 Photoshop Image Assets</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Advanced Excel V-Lookup Automation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> National Inventory Consolidation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Photoshop CS6 Asset Graphic Design</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Professional Multi-Format Rendering</li>
                     </ul>
                 </div>
             </div>
@@ -125,131 +126,164 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+    <section id="projects" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div class="text-center max-w-2xl mx-auto space-y-2">
-            <h2 class="text-3xl font-bold tracking-tight text-white">Featured Project Cases</h2>
-            <p class="text-slate-400 text-sm sm:text-base">Real-world production tools deployed and built to improve corporate performance matrixing.</p>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Featured Production Cases</h2>
+            <p class="text-slate-400 text-sm sm:text-base">Real-world applications engineered to maximize workflow productivity and data transparency.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Project 1 -->
-            <div class="card-bg rounded-2xl overflow-hidden hover:shadow-xl transition group">
-                <div class="h-48 gradient-bg flex items-center justify-center text-white relative">
-                    <i class="fa-solid fa-mobile-screen-button text-6xl opacity-40 group-hover:scale-110 transition duration-500"></i>
-                    <span class="absolute bottom-4 left-4 bg-slate-900/60 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-md">Full-Stack Application</span>
-                </div>
-                <div class="p-6 space-y-4">
-                    <h3 class="text-xl font-bold text-white">IMRS Employee Check-In & Out App</h3>
+            <div class="card-bg rounded-2xl overflow-hidden group flex flex-col justify-between">
+                <div class="p-6 sm:p-8 space-y-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-sky-400">Full-Stack App Development</span>
+                    <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">IMRS Check-In & Out Dashboard</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        A custom enterprise operational ecosystem designed to optimize tracking metrics. Built with reactive micro-logic to eliminate sync lags across distributed environments.
+                        A dynamic, high-performance web architecture engineered for real-time human resource management and live location mapping synchronization.
                     </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-medium text-sky-400">
-                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">HTML5/CSS3</span>
-                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">JavaScript (ES6)</span>
-                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">Firebase Firestore</span>
-                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">Google Apps Script</span>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">HTML5/CSS3</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">JavaScript ES6</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">Firebase Firestore</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">Google Apps Script</span>
                     </div>
+                </div>
+                <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <div class="text-xs text-slate-500 flex items-center gap-2"><i class="fa-solid fa-server"></i> Deployed on GitHub Pages Architecture</div>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="card-bg rounded-2xl overflow-hidden hover:shadow-xl transition group">
-                <div class="h-48 bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white relative">
-                    <i class="fa-solid fa-chart-line text-6xl opacity-40 group-hover:scale-110 transition duration-500"></i>
-                    <span class="absolute bottom-4 left-4 bg-slate-900/60 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-md">Data Infrastructure</span>
-                </div>
-                <div class="p-6 space-y-4">
-                    <h3 class="text-xl font-bold text-white">National Inventory Consolidation System</h3>
+            <div class="card-bg rounded-2xl overflow-hidden group flex flex-col justify-between">
+                <div class="p-6 sm:p-8 space-y-4">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">Data Analytics & Automation</span>
+                    <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition">National Cross-Regional Reporting Matrix</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Architected an automated multi-sheet data system gathering stock flows from Luzon, Visayas, and Mindanao. Enhanced with cross-referenced V-Lookup validations to minimize reporting errors.
+                        Designed comprehensive automated macro-inventories uniting cross-island deployment operations (Luzon, Visayas, Mindanao) into seamless corporate pipelines.
                     </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-medium text-purple-400">
-                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10">Advanced Excel Logic</span>
-                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10">Data Management</span>
-                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10">Master Reporting</span>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">Advanced MS Excel</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">V-Lookup Logic</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">Client Master Slides</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-md border border-slate-700">Data Sync</span>
                     </div>
+                </div>
+                <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <div class="text-xs text-slate-500 flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> Serviced for Multi-brand Outlets & Distribution Units</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-slate-900/50 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto space-y-12">
+    <section id="experience" class="py-20 bg-slate-900/50 border-y border-slate-800/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto space-y-12">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl font-bold tracking-tight text-white">Professional Career History</h2>
-                <p class="text-slate-400 text-sm sm:text-base">16+ years of consistent value delivery and multi-departmental support.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-white">Professional Journey</h2>
+                <p class="text-slate-400 text-sm sm:text-base">A timeline tracking over sixteen consecutive years of high-responsibility corporate advancement.</p>
             </div>
 
-            <div class="space-y-8 relative before:absolute before:top-0 before:left-4 md:before:left-1/2 before:w-0.5 before:h-full before:bg-slate-800">
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-10">
                 <!-- Timeline Item 1 -->
-                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
-                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-sky-500 -translate-x-1.5 md:-translate-x-2 border-4 border-slate-900 z-10"></div>
-                    <div class="w-full md:w-[45%] pl-12 md:pl-0 md:text-right space-y-1 order-2 md:order-1">
-                        <span class="text-xs font-semibold tracking-wider text-sky-400 uppercase">2020 - Present</span>
-                        <h4 class="text-lg font-bold text-white">IT & Communications Coordinator</h4>
-                        <p class="text-sm text-slate-400 font-medium">IMERCH MEDIA INC. (HRD Department)</p>
-                    </div>
-                    <div class="hidden md:block w-[45%] order-2"></div>
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-sky-400 group-hover:bg-sky-400 transition"></div>
+                    <span class="text-xs font-semibold text-sky-400">Feb 2020 – Present</span>
+                    <h3 class="text-lg font-bold text-white pt-1">IT & Communications Coordinator (Multimedia & Infrastructure Lead)</h3>
+                    <h4 class="text-sm font-medium text-slate-400">IMERCH MEDIA INC.</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Entrusted by the Human Resource Development department to anchor the company's tech-infrastructure ecosystem, manage localized networking arrays, deploy dynamic diagnostics, and configure visual corporate assets.
+                    </p>
                 </div>
 
                 <!-- Timeline Item 2 -->
-                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
-                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-indigo-500 -translate-x-1.5 md:-translate-x-2 border-4 border-slate-900 z-10"></div>
-                    <div class="hidden md:block w-[45%]"></div>
-                    <div class="w-full md:w-[45%] pl-12 space-y-1 order-2">
-                        <span class="text-xs font-semibold tracking-wider text-indigo-400 uppercase">2015 - 2020</span>
-                        <h4 class="text-lg font-bold text-white">Team Leader & System Analyst</h4>
-                        <p class="text-sm text-slate-400 font-medium">IMERCH MEDIA INC.</p>
-                    </div>
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-indigo-400 group-hover:bg-indigo-400 transition"></div>
+                    <span class="text-xs font-semibold text-indigo-400">May 2015 – Feb 2020</span>
+                    <h3 class="text-lg font-bold text-white pt-1">Promoted: Team Leader / Senior System Analyst / Data Analyst</h3>
+                    <h4 class="text-sm font-medium text-slate-400">IMERCH MEDIA INC.</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Led strategic deployment validation trackers. Orchestrated performance metrics optimization maps spanning elite corporate clients including Pernod Ricard, CVS, Delfi Inc., and SLAGRI TECH.
+                    </p>
                 </div>
 
                 <!-- Timeline Item 3 -->
-                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
-                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-purple-500 -translate-x-1.5 md:-translate-x-2 border-4 border-slate-900 z-10"></div>
-                    <div class="w-full md:w-[45%] pl-12 md:pl-0 md:text-right space-y-1 order-2 md:order-1">
-                        <span class="text-xs font-semibold tracking-wider text-purple-400 uppercase">2010 - 2015</span>
-                        <h4 class="text-lg font-bold text-white">Senior Data & System Analyst</h4>
-                        <p class="text-sm text-slate-400 font-medium">IMERCH MEDIA INC.</p>
-                    </div>
-                    <div class="hidden md:block w-[45%] order-2"></div>
+                <div class="relative pl-8 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-900 border-2 border-slate-700 group-hover:bg-slate-500 transition"></div>
+                    <span class="text-xs font-semibold text-slate-500">April 2010 – May 2015</span>
+                    <h3 class="text-lg font-bold text-white pt-1">Standard Role: Data Entry & System Operations</h3>
+                    <h4 class="text-sm font-medium text-slate-400">IMERCH MEDIA INC.</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Managed high-speed raw system configurations and managed complex macro data conversions while solidifying continuous enterprise architecture uptime.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-8">
-        <div class="space-y-2">
-            <h2 class="text-3xl font-bold tracking-tight text-white">Let's Connect For Opportunities</h2>
-            <p class="text-slate-400 max-w-md mx-auto text-sm sm:text-base">Ready to engineer modern operational scripts or drive enterprise data structures for your firm.</p>
+    <section id="contact" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-2">
+            <h2 class="text-3xl font-bold tracking-tight text-white">Let's Connect</h2>
+            <p class="text-slate-400 text-sm sm:text-base">Ready to deploy high-impact software, infrastructure systems, or corporate workflows for your enterprise.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left">
-            <div class="card-bg p-4 rounded-xl flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400">
-                    <i class="fa-solid fa-envelope"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+            <div class="card-bg p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-xl font-bold text-white">Direct Channels</h3>
+                    <p class="text-slate-400 text-sm">Feel free to reach out anytime via email or phone call. I response promptly to operational inquiries.</p>
                 </div>
-                <div>
-                    <p class="text-xs text-slate-400 font-medium">Email Address</p>
-                    <a href="mailto:ron.sarmenta@gmail.com" class="text-sm font-bold text-white hover:underline">ron.sarmenta@gmail.com</a>
+                
+                <div class="space-y-4">
+                    <a href="mailto:ron.sarmenta@gmail.com" class="flex items-center gap-4 text-slate-300 hover:text-sky-400 transition group">
+                        <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-sky-500/40">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <span class="text-sm sm:text-base">ron.sarmenta@gmail.com</span>
+                    </a>
+                    <a href="tel:09925434425" class="flex items-center gap-4 text-slate-300 hover:text-sky-400 transition group">
+                        <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center group-hover:border-sky-500/40">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span class="text-sm sm:text-base">09925434425</span>
+                    </a>
+                    <div class="flex items-center gap-4 text-slate-300 group">
+                        <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <span class="text-sm sm:text-base">Nueva Ecija, Philippines</span>
+                    </div>
                 </div>
             </div>
-            <div class="card-bg p-4 rounded-xl flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 font-medium">Mobile Number</p>
-                    <p class="text-sm font-bold text-white">09925434425</p>
+
+            <div class="card-bg p-6 sm:p-8 rounded-2xl space-y-4">
+                <h3 class="text-xl font-bold text-white">Operational Details</h3>
+                <div class="text-sm text-slate-400 space-y-3">
+                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                        <span>Academic Degree:</span>
+                        <span class="text-white font-medium">BS Info Tech (Programming)</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                        <span>Total Experience:</span>
+                        <span class="text-white font-medium">16+ Years Continuous</span>
+                    </div>
+                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                        <span>Core Specialty:</span>
+                        <span class="text-white font-medium">Operations & Tech Hybrid</span>
+                    </div>
+                    <div class="flex justify-between pt-1">
+                        <span>Work Availability:</span>
+                        <span class="text-emerald-400 font-medium">Immediate Deployment</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Ron Maynard R. Sarmenta. Handcrafted for GitHub Pages.</p>
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Ron Maynard R. Sarmenta. All rights reserved.</p>
     </footer>
 
 </body>

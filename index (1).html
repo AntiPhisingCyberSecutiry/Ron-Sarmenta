@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ron Maynard Sarmenta | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+        }
+        .card-bg { background-color: #1e293b; border: 1px solid #334155; }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight text-white">RMS<span class="text-sky-400">.tech</span></span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-sky-400 transition">About</a>
+                <a href="#skills" class="hover:text-sky-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
+                <a href="#experience" class="hover:text-sky-400 transition">Experience</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Contact</a>
+            </div>
+            <a href="#contact" class="gradient-bg text-white text-xs font-semibold px-4 py-2 rounded-full shadow-lg shadow-indigo-500/20 hover:opacity-90 transition">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-medium">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for Corporate & Freelance Work
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+                Hi, I'm <span class="gradient-text">Ron Maynard</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-slate-400">
+                IT Operations Lead / Full-Stack Developer / Creative Video Editor
+            </p>
+            <p class="text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed text-sm sm:text-base">
+                An adaptable IT Professional with 16+ years of verified expertise in building custom cloud-linked web apps, managing enterprise data systems, deploying remote corporate networks, and producing premium marketing video layouts.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a href="#projects" class="gradient-bg text-white text-sm font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-500/20 hover:opacity-90 transition flex items-center gap-2">
+                    View My Work <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#contact" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-sm font-semibold px-6 py-3 rounded-xl transition flex items-center gap-2">
+                    Get In Touch <i class="fa-solid fa-envelope text-xs"></i>
+                </a>
+            </div>
+        </div>
+        <div class="w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900 flex items-center justify-center relative group">
+            <div class="absolute inset-0 bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            <!-- Avatar Fallback Icon or Image -->
+            <i class="fa-solid fa-user-tie text-7xl text-slate-600 group-hover:text-sky-400 transition duration-500"></i>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900/50 border-y border-slate-800/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Expertise & Core Competencies</h2>
+                <p class="text-slate-400 text-sm sm:text-base">A diverse tech stack bridging the gap between robust system engineering, precise business data matrixing, and corporate creative workflows.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="card-bg p-6 rounded-2xl space-y-4 hover:border-sky-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400">
+                        <i class="fa-solid fa-code text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Full-Stack Engineering</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-400 text-xs"></i> HTML5 / CSS3 (Flexbox & Grid)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-400 text-xs"></i> JavaScript (ES6+ Modern Logic)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-400 text-xs"></i> Firebase Firestore & Auth</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-sky-400 text-xs"></i> Google Apps Script (GAS) Dev</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="card-bg p-6 rounded-2xl space-y-4 hover:border-indigo-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                        <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Infrastructure & Remote Support</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Secure Remote Desktop Admin</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> Network Routing & Printer Tech</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> PC OS Architecture & Recovery</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-400 text-xs"></i> SSH Putty Server Data Sync</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="card-bg p-6 rounded-2xl space-y-4 hover:border-purple-500/40 transition">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400">
+                        <i class="fa-solid fa-video text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Data Analytics & Media</h3>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Cross-Regional Data Inventory</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Advanced Excel Formula Logic</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Video Layout Composition</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> CS6 Photoshop Image Assets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+            <h2 class="text-3xl font-bold tracking-tight text-white">Featured Project Cases</h2>
+            <p class="text-slate-400 text-sm sm:text-base">Real-world production tools deployed and built to improve corporate performance matrixing.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="card-bg rounded-2xl overflow-hidden hover:shadow-xl transition group">
+                <div class="h-48 gradient-bg flex items-center justify-center text-white relative">
+                    <i class="fa-solid fa-mobile-screen-button text-6xl opacity-40 group-hover:scale-110 transition duration-500"></i>
+                    <span class="absolute bottom-4 left-4 bg-slate-900/60 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-md">Full-Stack Application</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">IMRS Employee Check-In & Out App</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        A custom enterprise operational ecosystem designed to optimize tracking metrics. Built with reactive micro-logic to eliminate sync lags across distributed environments.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-medium text-sky-400">
+                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">HTML5/CSS3</span>
+                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">JavaScript (ES6)</span>
+                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">Firebase Firestore</span>
+                        <span class="px-2.5 py-1 rounded-md bg-sky-500/10">Google Apps Script</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card-bg rounded-2xl overflow-hidden hover:shadow-xl transition group">
+                <div class="h-48 bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white relative">
+                    <i class="fa-solid fa-chart-line text-6xl opacity-40 group-hover:scale-110 transition duration-500"></i>
+                    <span class="absolute bottom-4 left-4 bg-slate-900/60 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-md">Data Infrastructure</span>
+                </div>
+                <div class="p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">National Inventory Consolidation System</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Architected an automated multi-sheet data system gathering stock flows from Luzon, Visayas, and Mindanao. Enhanced with cross-referenced V-Lookup validations to minimize reporting errors.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-medium text-purple-400">
+                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10">Advanced Excel Logic</span>
+                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10">Data Management</span>
+                        <span class="px-2.5 py-1 rounded-md bg-purple-500/10">Master Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-900/50 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto space-y-12">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Professional Career History</h2>
+                <p class="text-slate-400 text-sm sm:text-base">16+ years of consistent value delivery and multi-departmental support.</p>
+            </div>
+
+            <div class="space-y-8 relative before:absolute before:top-0 before:left-4 md:before:left-1/2 before:w-0.5 before:h-full before:bg-slate-800">
+                <!-- Timeline Item 1 -->
+                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-sky-500 -translate-x-1.5 md:-translate-x-2 border-4 border-slate-900 z-10"></div>
+                    <div class="w-full md:w-[45%] pl-12 md:pl-0 md:text-right space-y-1 order-2 md:order-1">
+                        <span class="text-xs font-semibold tracking-wider text-sky-400 uppercase">2020 - Present</span>
+                        <h4 class="text-lg font-bold text-white">IT & Communications Coordinator</h4>
+                        <p class="text-sm text-slate-400 font-medium">IMERCH MEDIA INC. (HRD Department)</p>
+                    </div>
+                    <div class="hidden md:block w-[45%] order-2"></div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-indigo-500 -translate-x-1.5 md:-translate-x-2 border-4 border-slate-900 z-10"></div>
+                    <div class="hidden md:block w-[45%]"></div>
+                    <div class="w-full md:w-[45%] pl-12 space-y-1 order-2">
+                        <span class="text-xs font-semibold tracking-wider text-indigo-400 uppercase">2015 - 2020</span>
+                        <h4 class="text-lg font-bold text-white">Team Leader & System Analyst</h4>
+                        <p class="text-sm text-slate-400 font-medium">IMERCH MEDIA INC.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
+                    <div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-purple-500 -translate-x-1.5 md:-translate-x-2 border-4 border-slate-900 z-10"></div>
+                    <div class="w-full md:w-[45%] pl-12 md:pl-0 md:text-right space-y-1 order-2 md:order-1">
+                        <span class="text-xs font-semibold tracking-wider text-purple-400 uppercase">2010 - 2015</span>
+                        <h4 class="text-lg font-bold text-white">Senior Data & System Analyst</h4>
+                        <p class="text-sm text-slate-400 font-medium">IMERCH MEDIA INC.</p>
+                    </div>
+                    <div class="hidden md:block w-[45%] order-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-8">
+        <div class="space-y-2">
+            <h2 class="text-3xl font-bold tracking-tight text-white">Let's Connect For Opportunities</h2>
+            <p class="text-slate-400 max-w-md mx-auto text-sm sm:text-base">Ready to engineer modern operational scripts or drive enterprise data structures for your firm.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left">
+            <div class="card-bg p-4 rounded-xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-slate-400 font-medium">Email Address</p>
+                    <a href="mailto:ron.sarmenta@gmail.com" class="text-sm font-bold text-white hover:underline">ron.sarmenta@gmail.com</a>
+                </div>
+            </div>
+            <div class="card-bg p-4 rounded-xl flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                    <p class="text-xs text-slate-400 font-medium">Mobile Number</p>
+                    <p class="text-sm font-bold text-white">09925434425</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Ron Maynard R. Sarmenta. Handcrafted for GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
